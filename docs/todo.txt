@@ -1,0 +1,83 @@
+✰
+  Add documentation
+
+
+✰
+  Add feature:
+  
+  def validation_arguments(parse_args, sys):
+    """
+    Documentation.
+    """
+    rules = {
+        "message_encode": {
+            "condition": lambda: parse_args.message is not None,
+            "message": "Documentation:",
+        }
+    }
+
+    rule = rules.get(parse_args.service)
+    if rule and not rule.get("condition")():
+        print(f"Documentation: {rule.get('message')}")
+        sys.exit(1)
+
+
+  def configuration_arguments_parser(
+    services: dict, argparse: argparse, json: json
+) -> argparse.ArgumentParser:
+    """
+    This function sets up the system argument parser.
+
+    :param services: The dictionary of available services.
+    :param argparse: The argparse module to set up the argument parser.
+    :param json: The json module to parse json type arguments.
+
+    :return: The configured argument parser.
+    """
+    argument_parser = argparse.ArgumentParser()
+
+    argument_parser.add_argument(
+        "-s",
+        "--service",
+        required=True,
+        type=lambda service: service_validator(
+            service=service, services=services, argparse=argparse
+        ),
+        help="The name of the service to validate.",
+    )
+    argument_parser.add_argument(
+        "-m", "--message", type=json.loads, help="The message to process."
+    )
+
+    return argument_parser
+
+/** ************************************************************************ **/
+
+           __-----_.                        ________
+          /  \      \           o  O  O   _(        )__
+         /    |  |   \_---_   o._.      _(             )_
+        |     |            \   | |""""(_   Hello World!  )
+        |     |             |@ | |    (_               _)
+         \___/   ___       /   | |      (__          _)
+           \____(____\___/     | |         (________)
+           |__|                | |          |
+           /   \-_             | |         |'
+         /      \_ "__ _       !_!--v---v--"
+        /         "|  |>)      |""""""""|
+       |          _|  | ._--""||        |
+       _\_____________|_|_____||________|_
+      /                                   \
+     /_____________________________________\
+     /                                     \
+    /_______________________________________\
+    /                                       \
+   /_________________________________________\
+        {                               }
+        <_______________________________|
+        |                               >
+        {_______________________________|               ________
+        <                               }              / MINIMI \
+        |_______________________________|             /__________\
+\|/       \\/             \||//           |//                       \|/    |/
+
+/** ************************************************************************ **/
