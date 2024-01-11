@@ -34,7 +34,7 @@ Clone the repository:
 
 ```
 git clone https://github.com/miniscandal/encode-decode-message-jwt.git
-cd .\whos-that-pokemon\
+cd .\encode-decode-message-jwt\
 ```
 
 Install project dependencies:
