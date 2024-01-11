@@ -9,6 +9,7 @@ para la codificación de mensajes en formato JSON y la decodificación de mensaj
 
 
 ## Recomendación Importante
+≧◠‿◠≦
 
 Este software genera archivos PEM con claves RSA, las cuales son un componente
 crucial de la seguridad en la criptografía. Es esencial tratar estas claves con la máxima
