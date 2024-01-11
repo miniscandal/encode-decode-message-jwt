@@ -33,7 +33,7 @@ las mejores prácticas de seguridad al manejar claves RSA.
 Clone the repository:
 
 ```
-git clone https://github.com/miniscandal/whos-that-pokemon.git
+git clone https://github.com/miniscandal/encode-decode-message-jwt.git
 cd .\whos-that-pokemon\
 ```
 
