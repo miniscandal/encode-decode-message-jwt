@@ -8,16 +8,18 @@ them in a structured format.
 """
 
 # pylint: disable=W0621
+# pylint:disable=C0116
 
-from typing import Callable
+from typing import Any
 
 import argparse
 
 from shared.feature_services_dictionary.feature import get_services_dictionary
 
 
-def service_validator(service: str, services: dict[str, Callable[[str], None]]) -> str:
+def service_validator(service: str, services: dict[str, Any]) -> str:
     """
+
     return:
         str: service name.
     """
@@ -31,8 +33,6 @@ def service_validator(service: str, services: dict[str, Callable[[str], None]]) 
 
 
 def configuration_arguments_parser() -> argparse.ArgumentParser:
-    # pylint:disable=C0116
-
     argument_parser = argparse.ArgumentParser()
     services = get_services_dictionary()
     service_names = ", ".join(services.keys())

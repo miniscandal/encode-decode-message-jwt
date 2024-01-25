@@ -1,8 +1,9 @@
-# Generador de archivos PEM con RSA Keys y JWT
+# Administrador de Claves RSA
 
-Este software o herramienta de terminal facilita la gestión de claves RSA, tanto públicas
-como privadas, a través de la creación y lectura de archivos PEM. Además, ofrece funcionalidades
-para la codificación de mensajes en formato JSON y la decodificación de mensajes en formato JWT.
+Esta herramienta de terminal simplifica la administración de claves RSA, tanto públicas  
+como privadas. Ofrece funcionalidades para la creación y lectura de archivos PEM.  
+Permite la codificación de mensajes en formato JSON y la decodificación de mensajes  
+en formato JWT.
 
 <img src="./docs/pictures/terminal-capture.png" width="540">
 
@@ -12,11 +13,11 @@ para la codificación de mensajes en formato JSON y la decodificación de mensaj
 ≧◠‿◠≦
 
 Este software genera archivos PEM con claves RSA, las cuales son un componente
-crucial de la seguridad en la criptografía. Es esencial tratar estas claves con la máxima
-seguridad y precaución.  
-No deben ser compartidas ni expuestas bajo ninguna circunstancia. Si se sospecha que una clave
-privada ha sido comprometida, debe ser reemplazada inmediatamente. Recuerda siempre seguir
-las mejores prácticas de seguridad al manejar claves RSA.
+crucial de la seguridad en la criptografía. Es esencial tratar estas claves con  
+la máxima seguridad y precaución.  
+No deben ser compartidas ni expuestas bajo ninguna circunstancia. Si se sospecha  
+que una clave privada ha sido comprometida, debe ser reemplazada inmediatamente.  
+Recuerda siempre seguir las mejores prácticas de seguridad al manejar claves RSA.
 
 
 ## Configuración de desarrollo
@@ -137,4 +138,4 @@ software libre.
 
 ≧◠‿◠≦
 
-Este proyecto está bajo la Licencia MIT - mira el archivo LICENSE para detalles.
+Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.

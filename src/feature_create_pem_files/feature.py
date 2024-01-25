@@ -1,9 +1,13 @@
 """
-Module responsibility:
+Module Responsibility:
+
+RSA Key Generation: Generates a pair of keys (public and private), serializes
+them in PEM format, and saves them in files.
 """
 
 # pylint:disable=E0401
 # pylint:disable=E0611
+# pylint:disable = C0116
 
 import os
 import argparse
@@ -15,8 +19,6 @@ from shared.feature_get_path_pem_file.feature import get_path_pem_file
 
 
 def generate_private_rsa_key() -> rsa.RSAPrivateKey:
-    # pylint:disable = C0116
-
     private_key = rsa.generate_private_key(
         public_exponent=65537, key_size=2048, backend=default_backend()
     )
@@ -25,16 +27,12 @@ def generate_private_rsa_key() -> rsa.RSAPrivateKey:
 
 
 def generate_public_rsa_key(private_key: rsa.RSAPrivateKey) -> rsa.RSAPublicKey:
-    # pylint:disable = C0116
-
     public_key = private_key.public_key()
 
     return public_key
 
 
 def serialize_private_rsa_key(private_key: rsa.RSAPrivateKey) -> bytes:
-    # pylint:disable = C0116
-
     private_pem = private_key.private_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PrivateFormat.PKCS8,
@@ -45,8 +43,6 @@ def serialize_private_rsa_key(private_key: rsa.RSAPrivateKey) -> bytes:
 
 
 def serialize_public_rsa_key(public_key: rsa.RSAPublicKey) -> bytes:
-    # pylint:disable = C0116
-
     public_pem = public_key.public_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PublicFormat.SubjectPublicKeyInfo,
@@ -56,8 +52,6 @@ def serialize_public_rsa_key(public_key: rsa.RSAPublicKey) -> bytes:
 
 
 def file_write(path: str, pem: bytes) -> None:
-    # pylint:disable = C0116
-
     try:
         with open(path, "wb") as file:
             file.write(pem)
@@ -66,7 +60,6 @@ def file_write(path: str, pem: bytes) -> None:
 
 
 def create_pem_files(arguments: argparse.Namespace) -> None:
-    # pylint:disable = C0116
     # pylint:disable = W0613
 
     private_key = generate_private_rsa_key()
@@ -78,9 +71,8 @@ def create_pem_files(arguments: argparse.Namespace) -> None:
     path_pem_public = get_path_pem_file("PUBLIC_PEM_FILE_NAME")
     file_write(path_pem_private, private_pem)
     file_write(path_pem_public, public_pem)
-    directory_path = os.getenv("DIRECTORY_PATH_PEM_FILE")
-
     message = "The pem files have been successfully saved to the path:"
+    directory_path = os.getenv("DIRECTORY_PATH_PEM_FILE")
     print(f"{message} \n {directory_path} \n")
     print(private_pem.decode())
     print(public_pem.decode())

@@ -1,10 +1,14 @@
 """
 Module responsibility:
+
+PEM File Reading: This module is responsible for reading RSA keys from PEM files
+converting them into a serialized PEM format, and printing them.
 """
 
 # pylint:disable=E0401
 # pylint:disable=E0611
 # pylint:disable=W0621
+# pylint:disable = C0116
 
 import argparse
 
@@ -16,8 +20,6 @@ from shared.feature_get_path_pem_file.feature import get_path_pem_file
 
 
 def convert_private_key_to_pem(rsa_private_pem: rsa.RSAPrivateKey) -> str:
-    # pylint:disable = C0116
-
     pem = rsa_private_pem.private_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PrivateFormat.PKCS8,
@@ -28,8 +30,6 @@ def convert_private_key_to_pem(rsa_private_pem: rsa.RSAPrivateKey) -> str:
 
 
 def convert_public_key_to_pem(public_key: rsa.RSAPublicKey) -> str:
-    # pylint:disable = C0116
-
     pem = public_key.public_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PublicFormat.SubjectPublicKeyInfo,
@@ -39,7 +39,6 @@ def convert_public_key_to_pem(public_key: rsa.RSAPublicKey) -> str:
 
 
 def read_pem_files(arguments: argparse.Namespace) -> None:
-    # pylint:disable = C0116
     # pylint:disable = W0613
 
     path_pem_private = get_path_pem_file("PRIVATE_PEM_FILE_NAME")
