@@ -1,4 +1,3 @@
-✰
 Terminal Commands:
 
 Remove Item:
