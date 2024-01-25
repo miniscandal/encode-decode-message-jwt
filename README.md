@@ -12,7 +12,7 @@ en formato JWT.
 ## Recomendación Importante
 ≧◠‿◠≦
 
-Este software genera archivos PEM con claves RSA, las cuales son un componente
+Este software genera archivos PEM con claves RSA, las cuales son un componente  
 crucial de la seguridad en la criptografía. Es esencial tratar estas claves con  
 la máxima seguridad y precaución.  
 No deben ser compartidas ni expuestas bajo ninguna circunstancia. Si se sospecha  
