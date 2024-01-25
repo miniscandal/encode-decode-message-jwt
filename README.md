@@ -28,7 +28,7 @@ Recuerda siempre seguir las mejores prácticas de seguridad al manejar claves RS
 * Conocimientos básicos de terminal y línea de comandos
 * Tener instalado [Python](https://www.python.org/) en tu sistema que incluye [PIP](https://pypi.org/project/pip/)
 
-### Procedimiento de configuración
+### Proceso de Implementación
 
 #### Clonar repositorio
 
@@ -37,7 +37,7 @@ git clone https://github.com/miniscandal/encode-decode-message-jwt.git
 cd .\encode-decode-message-jwt\
 ```
 
-#### Configurar entorno virtual
+#### Habilitar entorno virtual
 
 ```
 python -m venv .\venv
