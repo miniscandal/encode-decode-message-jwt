@@ -50,10 +50,17 @@ python -m venv .\venv
 pip install -r requirements.txt`
 ```
 
-#### Elementos esenciales
+#### Recursos esenciales
 
-Archivo JSON con el nombre "message.json" en el directorio resources  
-con la información que deseas codificar.
+* Un archivo JSON con el nombre message.json en el directorio resources. Este archivo  
+  debe contener la información que deseas codificar. Por ejemplo podría tener la  
+  siguiente estructura:
+
+```json
+{
+  "mensaje": "Tu mensaje aquí"
+}
+```
 
 
 ### Lista de comandos para el script
