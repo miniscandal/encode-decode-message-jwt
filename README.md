@@ -117,11 +117,11 @@ productividad y faciliten la gestión de proyectos.
 
 #### Recursos de código abierto
 
-* PyJWT: Una biblioteca de Python para codificar y decodificar JWT.  
-  Desarrollado por José Padilla y otros contribuyentes.
+* [PyJWT](https://pypi.org/project/PyJWT/):
+  Biblioteca Python que permite codificar y decodificar JSON Web Tokens (JWT).
 
-Agradecemos a los autores de estas bibliotecas por su trabajo y contribución a la comunidad de
-software libre.
+Agradecemos a los autores de estas bibliotecas por su trabajo y contribución  
+para la comunidad de software libre.
 
 
 
