@@ -41,6 +41,7 @@ cd .\encode-decode-message-jwt\
 Install project dependencies:
 
 ```
+python -m venv .\venv
 pip install -r requirements.txt`
 ```
 
