@@ -1,4 +1,4 @@
-# Administrador de Claves RSA
+# Administrador de claves RSA
 
 Esta herramienta de terminal simplifica la administración de claves RSA, tanto públicas  
 como privadas. Ofrece funcionalidades para la creación y lectura de archivos PEM.  
@@ -9,7 +9,7 @@ en formato JWT.
 
 
 
-## Recomendación Importante
+## Recomendación importante
 ≧◠‿◠≦
 
 Este software genera archivos PEM con claves RSA, las cuales son un componente  
@@ -25,36 +25,41 @@ Recuerda siempre seguir las mejores prácticas de seguridad al manejar claves RS
 
 ### Requisitos previos
 
-* Manejo de terminal y línea de comandos.
-* Install [Python](https://www.python.org/) which includes [PIP](https://pypi.org/project/pip/)
+* Conocimientos básicos de terminal y línea de comandos
+* Tener instalado [Python](https://www.python.org/) en tu sistema que incluye [PIP](https://pypi.org/project/pip/)
 
+### Procedimiento de configuración
 
-### Instalación
-
-Clone the repository:
+#### Clonar repositorio
 
 ```
 git clone https://github.com/miniscandal/encode-decode-message-jwt.git
 cd .\encode-decode-message-jwt\
 ```
 
-Install project dependencies:
+#### Configurar entorno virtual
 
 ```
 python -m venv .\venv
-pip install -r requirements.txt`
-```
-
-Run application:
-
-```
 .\venv\Scripts\activate
 ```
 
-
-### Lista de comandos
+#### Instalar módulos requeridos
 
 ```
+pip install -r requirements.txt`
+```
+
+#### Elementos esenciales
+
+Archivo JSON con el nombre "message.json" en el directorio resources  
+con la información que deseas codificar.
+
+
+### Lista de comandos para el script
+
+```
+python .\src\main.py -h
 python .\src\main.py -s create_pem
 python .\src\main.py -s read_pem
 python .\src\main.py -s message_encode
@@ -74,64 +79,49 @@ python .\src\main.py -s message_decode
 ![JWT](https://img.shields.io/badge/JWT-%2300aa00.svg?style=for-the-badge)
 
 
-
 ### Referencias
 
 * [Python](https://www.python.org/)
 
 
 
-
-
-
-
-
-
-## Reflexiones y Aprendizajes
+## Reflexiones y aprendizajes
 
 ≧◠‿◠≦
 
+Durante el desarrollo de esta herramienta de terminal, perfeccioné y expandí  
+mis habilidades en áreas clave.
 
-Durante el desarrollo de esta herramienta de terminal, tuve la oportunidad de perfeccionar y expandir
-mis habilidades en varias áreas clave.
+Implementé un entorno virtual aislado para evitar conflictos de dependencias  
+previniendo la contaminación del sistema.
 
+Dediqué tiempo para optimizar la estructura del proyecto y las funcionalidades  
+lo que resultó en un código más organizado y una navegación y comprensión  
+del flujo del programa más sencillas.
 
-Implementación de un entorno virtual aislado para evitar conflictos  
-de dependencias y prevenir la contaminación del sistema.
+Esta herramienta es en respuesta a la necesidad de realizar pruebas en un proyecto  
+independiente, construido con JAVA y Spring Boot, que requería la autenticación  
+de usuarios mediante JWT.
 
-Trabajé para mejorar significativamente la estructura del proyecto, lógica de
-negocio y las funcionalidades, lo que aumentó la organización del código y facilitó la
-navegación y la comprensión del flujo del programa.
-
-Este software se diseñó como una respuesta a la necesidad de realizar pruebas en un proyecto
-independiente, construido con JAVA y Spring Boot, que requería la autenticación de usuarios
-mediante JWT. Esta solución ha mejorado significativamente la experiencia y la productividad
-del desarrollador de software, optimizando el flujo de trabajo y aumentando la eficiencia.
-
-En conclusión, este proyecto ha sido una experiencia invaluable para no solo profundizar
-en mis habilidades técnicas existentes, sino también para explorar y adquirir nuevas
-competencias en el desarrollo de software orientado a la terminal o línea de comandos.
-
-Las habilidades recién adquiridas y perfeccionadas me preparan para enfrentar con
-eficacia los desafíos futuros de desarrollo. Estas habilidades serán fundamentales para abordar
-futuros desafíos de desarrollo en herramientas de terminal.
-
-
-
+En conclusión, este proyecto ha fortalecido mis habilidades técnicas y me ha  
+permitido adquirir nuevas competencias, especialmente en el desarrollo de software  
+para la terminal. Estas capacidades serán fundamentales para afrontar futuros  
+desafíos, particularmente en la creación de herramientas que optimicen la  
+productividad y faciliten la gestión de proyectos.
 
 
 
 ## Créditos
 
-Este proyecto utiliza las siguientes bibliotecas de código abierto:
+≧◠‿◠≦
 
-- PyJWT: Una biblioteca de Python para codificar y decodificar JWT.
-Desarrollado y mantenido por José Padilla y otros contribuyentes.
+#### Recursos de código abierto
+
+* PyJWT: Una biblioteca de Python para codificar y decodificar JWT.  
+  Desarrollado por José Padilla y otros contribuyentes.
 
 Agradecemos a los autores de estas bibliotecas por su trabajo y contribución a la comunidad de
 software libre.
-
-
 
 
 
