@@ -1,4 +1,8 @@
 ✰
+Terminal Commands:
+
+Remove Item:
+Get-ChildItem -Path ".\" -Recurse -Filter "__pycache__" -Directory | Remove-Item -Recurse -Force
 
 /** ************************************************************************ **/
 
