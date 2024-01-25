@@ -1,46 +1,35 @@
 """
-This module defines the functions to convert
-private and public keys to PEM format and read PEM files.
+Module responsibility:
 """
 
 # pylint:disable=E0401
+# pylint:disable=E0611
+# pylint:disable=W0621
+
+import argparse
+
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 from shared.feature_load_pem_files.feature import load_private_pem_file
 from shared.feature_load_pem_files.feature import load_public_pem_file
-from shared.feature_read_environment_variables.feature import (
-    read_env_var_pem_file_paths,
-)
+from shared.feature_get_path_pem_file.feature import get_path_pem_file
 
 
-def convert_private_key_to_pem(
-    private_pem: rsa.RSAPrivateKey, serialization_module: serialization
-) -> str:
-    """
-    This function converts a private key to PEM format.
+def convert_private_key_to_pem(rsa_private_pem: rsa.RSAPrivateKey) -> str:
+    # pylint:disable = C0116
 
-    :param private_pem: The private key to convert.
-    :param serialization_module: The serialization module to use.
-
-    :return: The private key in PEM format.
-    """
-    pem = private_pem.private_bytes(
-        encoding=serialization_module.Encoding.PEM,
-        format=serialization_module.PrivateFormat.PKCS8,
-        encryption_algorithm=serialization_module.NoEncryption(),
+    pem = rsa_private_pem.private_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PrivateFormat.PKCS8,
+        encryption_algorithm=serialization.NoEncryption(),
     )
 
     return pem.decode("utf-8")
 
 
 def convert_public_key_to_pem(public_key: rsa.RSAPublicKey) -> str:
-    """
-    This function converts a public key to PEM format.
+    # pylint:disable = C0116
 
-    :param public_key: The public key to convert.
-
-    :return: The public key in PEM format.
-    """
     pem = public_key.public_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PublicFormat.SubjectPublicKeyInfo,
@@ -49,19 +38,15 @@ def convert_public_key_to_pem(public_key: rsa.RSAPublicKey) -> str:
     return pem.decode("utf-8")
 
 
-def read_pem_files(*args) -> None:
-    # pylint: disable=unused-argument
-    """
-    This function reads the PEM files specified in the environment
-    variables and converts them to PEM format.
+def read_pem_files(arguments: argparse.Namespace) -> None:
+    # pylint:disable = C0116
+    # pylint:disable = W0613
 
-    :param *args: The arguments that will be passed to the function when it is called.
-
-    """
-    pem_file_paths = read_env_var_pem_file_paths()
-    private_pem = load_private_pem_file(pem_file_paths["private_key"])
-    public_pem = load_public_pem_file(pem_file_paths["public_key"])
-    serialized_private_pem = convert_private_key_to_pem(private_pem, serialization)
-    serialized_public_pem = convert_public_key_to_pem(public_pem)
+    path_pem_private = get_path_pem_file("PRIVATE_PEM_FILE_NAME")
+    path_pem_public = get_path_pem_file("PUBLIC_PEM_FILE_NAME")
+    rsa_private_pem = load_private_pem_file(path_pem_private)
+    rsa_public_pem = load_public_pem_file(path_pem_public)
+    serialized_private_pem = convert_private_key_to_pem(rsa_private_pem)
+    serialized_public_pem = convert_public_key_to_pem(rsa_public_pem)
     print(serialized_private_pem)
     print(serialized_public_pem)

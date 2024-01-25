@@ -2,6 +2,30 @@
   Add documentation
 
 
+
+
+
+
+
+
+
+
+
+
+
+def read_env_var_pem_file_paths() -> dict[str, str]:
+    # pylint:disable = C0116
+
+    directory_path = os.getenv("DIRECTORY_PATH_PEM_FILE")
+    file_paths = {
+        "private_key": f"{directory_path}\\{os.getenv("PRIVATE_PEM_FILE_NAME")}",
+        "public_key": f"{directory_path}\\{os.getenv("PUBLIC_PEM_FILE_NAME")}",
+        "directory": directory_path
+    }
+
+    return file_paths # type: ignore
+
+
 ✰
   Add feature:
   
