@@ -28,7 +28,7 @@ Recuerda siempre seguir las mejores prácticas de seguridad al manejar claves RS
 * Conocimientos básicos de terminal y línea de comandos
 * Tener instalado [Python](https://www.python.org/) en tu sistema que incluye [PIP](https://pypi.org/project/pip/)
 
-### Proceso de Implementación
+### Proceso de implementación
 
 #### Clonar repositorio
 
